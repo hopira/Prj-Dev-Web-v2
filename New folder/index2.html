@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css2/all.min.css">
+    <link rel="stylesheet" href="css2/style.css">
+    <title>Our Products</title>
+        <!-- Remix Icon cdn-->
+        <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+        rel="stylesheet"
+      />
+  
+      <!-- boxicons font cdn -->
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+      />
+      <style>
+      
+        #shopping-cart {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            overflow-y: auto;
+            transition: right 0.3s ease; 
+        }
+
+        #shopping-cart.cart-open {
+            right: 0; 
+        }
+
+        .cart-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+<script>
+    function addToCart(productName, price) {
+        var cart = document.getElementById("shopping-cart");
+        var cartItem = document.createElement("div");
+        cartItem.className = "cart-item";
+        cartItem.innerHTML = productName + " - " + price + " Dh";
+        cart.appendChild(cartItem);
+        updateCartLogo();
+    }
+
+    function updateCartLogo() {
+        var cartLogo = document.getElementById("cart-logo");
+        var cartItemCount = document.querySelectorAll('.cart-item').length;
+        cartLogo.innerText = cartItemCount;
+
+        // Show the shopping cart when there are items
+        if (cartItemCount > 0) {
+            showShoppingCart();
+        }
+    }
+
+    // Function to show the shopping cart
+    function showShoppingCart() {
+        var cart = document.getElementById("shopping-cart");
+        cart.classList.add("cart-open");
+    }
+
+    // Function to hide the shopping cart
+    function hideShoppingCart() {
+        var cart = document.getElementById("shopping-cart");
+        cart.classList.remove("cart-open");
+    }
+</script>
+
+</head>
+<body>
+    <header>
+        <!-- logo -->
+        <a href="#" class="logo" style="font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; text-decoration: none; color: #000; white-space: nowrap;">Elegance Time</a>
+        <nav>
+          <!-- nav items -->
+          <ul class="navbar">
+            <li><a href="/Users/huawei/Desktop/E-commerce Smart-Watch/index.html">Home</a></li>
+            <li><a href="#" class="active">Products</a></li>
+            <li><a href="#">Contacts</a></li>
+          </ul>
+          <div class="icons">
+            <a href="#"><i class="ri-shopping-cart-2-line"></i><span id="cart-logo">0</span></a>
+            <a href=""><i class="ri-user-3-line"></i></a>
+            <div>|</div>
+            <div class="bx bx-menu-alt-right" id="menu-icon"></div>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+        <div class="box">
+            <img src="imgs/Huaw ft2.jpg">
+            <h2>Huawei Fit 2</h2>
+            <p>Écran HUAWEI FullView de 1,74 pouce | Appels Bluetooth | Suivi d'hygiène de vie</p>
+            <span>1800.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('Huawei Fit 2', 1800.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/Apple SE.png">
+            <h2>Apple Watch SE</h2>
+            <p>L’accessoire ultime pour une vie plus saine.</p>
+            <span>2800.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('Apple Watch SE', 2800.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/Huawei Band 8.webp">
+            <h2>Huawei Band 8</h2>
+            <p>Plus grand, plus léger, plus performant</p>
+            <span>2100.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('Huawei Band 8', 2100.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/Serie 9.png">
+            <h2>Apple Watch Serie 9</h2>
+            <p>Le premier produit Apple neutre en carbone.</p>
+            <span>4100.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('Apple Watch Serie 9', 4100.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/versa2.png">
+            <h2>FitBit Versa2</h2>
+            <p>C'est la montre forme et santé qu'il vous faut, avec tous ses fonctionnalités indispensables.</p>
+            <span>2100.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('FitBit Versa2', 2100.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/Versa 3.png">
+            <h2>FitBit Versa 3</h2>
+            <p>Va au bout de tes ambitions sportives ou que tu ailles</p>
+            <span>2800.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('FitBit Versa 3', 2800.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/Ace 3.webp">
+            <h2>FitBit Ace 3</h2>
+            <p>FitBit Ace 3 pour enfant à partir de 6 ans rend le sport ludique pour toute la famille </p>
+            <span>1300.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('FitBit Ace 3', 1300.00)">Add to Cart</a>
+            </div>
+        </div>
+        <div class="box">
+            <img src="imgs/Galaxy watch 6.png">
+            <h2>Galaxy Watch 6</h2>
+            <p>Galaxy Watch 6 Astro Edition — Un Chef-D'Œuvre Moderne Et Intemporel En Edition Limitée. Ne Ratez Pas Votre Chance.</p>
+            <span>3999.00 Dh</span>
+            <div class="rate">
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="filled fas fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+            </div>
+            <div class="options">
+                <a href="#">Buy It Now</a>
+                <a href="#" onclick="addToCart('Galaxy Watch 6', 3999.00)">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+    <div id="shopping-cart" onclick="hideShoppingCart()">
+        <h3>Shopping Cart</h3>
+</body>
+</html>
